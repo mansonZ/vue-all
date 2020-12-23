@@ -6,8 +6,8 @@
       @click="changeIndex(1)"
     >
       <div class="tab-item-box">
-        <img src="../assets/tab-day.png" alt="" class="tab-item-icn-a" v-show="selectedIndex==1"/>
-        <img src="../assets/tab-day-a.png" alt="" class="tab-item-icn-b" v-show="selectedIndex!=1"/>
+        <img src="../assets/images/tab-day.png" alt="" class="tab-item-icn-a" v-show="selectedIndex==1"/>
+        <img src="../assets/images/tab-day-a.png" alt="" class="tab-item-icn-b" v-show="selectedIndex!=1"/>
         <div class="tab-text" :class="{ 'tab-text-ac': selectedIndex == 1 }">日视图</div>
       </div>
     </div>
@@ -17,8 +17,8 @@
       @click="changeIndex(2)"
     >
       <div class="tab-item-box">
-        <img src="../assets/tab-week.png" alt="" class="tab-item-icn-a" v-show="selectedIndex==2"/>
-        <img src="../assets/tab-week-a.png" alt="" class="tab-item-icn-b" v-show="selectedIndex!=2"/>
+        <img src="../assets/images/tab-week.png" alt="" class="tab-item-icn-a" v-show="selectedIndex==2"/>
+        <img src="../assets/images/tab-week-a.png" alt="" class="tab-item-icn-b" v-show="selectedIndex!=2"/>
         <div class="tab-text" :class="{ 'tab-text-ac': selectedIndex == 2 }">周视图</div>
       </div> 
       </div>
@@ -28,9 +28,9 @@
       @click="changeIndex(3)"
     >
       <div class="tab-item-box">
-        <img src="../assets/tab-subjective.png" alt="" class="tab-item-icn-a" v-show="selectedIndex==3"/>
+        <img src="../assets/images/tab-subjective.png" alt="" class="tab-item-icn-a" v-show="selectedIndex==3"/>
         <img
-          src="../assets/tab-subjective-a.png"
+          src="../assets/images/tab-subjective-a.png"
           alt=""
           class="tab-item-icn-b"
           v-show="selectedIndex!=3"
