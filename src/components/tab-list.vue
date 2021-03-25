@@ -36,47 +36,7 @@
         <div class="tab-text" :class="{ 'tab-text-ac': selectedIndex == 2 }">周视图</div>
       </div>
     </div>
-  </div>
-  <!-- <div class="tab-list">
-    <div
-      class="tab-item"
-      :class="{ 'tab-ac': selectedIndex == 1 }"
-      @click="changeIndex(1)"
-    >
-      <div class="tab-item-box">
-        <img src="../assets/images/tab-day.png" alt="" class="tab-item-icn-a" v-show="selectedIndex==1"/>
-        <img src="../assets/images/tab-day-a.png" alt="" class="tab-item-icn-b" v-show="selectedIndex!=1"/>
-        <div class="tab-text" :class="{ 'tab-text-ac': selectedIndex == 1 }">日视图</div>
-      </div>
-    </div>
-    <div
-      class="tab-item"
-      :class="{ 'tab-ac': selectedIndex == 2 }"
-      @click="changeIndex(2)"
-    >
-      <div class="tab-item-box">
-        <img src="../assets/images/tab-week.png" alt="" class="tab-item-icn-a" v-show="selectedIndex==2"/>
-        <img src="../assets/images/tab-week-a.png" alt="" class="tab-item-icn-b" v-show="selectedIndex!=2"/>
-        <div class="tab-text" :class="{ 'tab-text-ac': selectedIndex == 2 }">周视图</div>
-      </div> 
-      </div>
-    <div
-      class="tab-item"
-      :class="{ 'tab-ac': selectedIndex == 3 }"
-      @click="changeIndex(3)"
-    >
-      <div class="tab-item-box">
-        <img src="../assets/images/tab-subjective.png" alt="" class="tab-item-icn-a" v-show="selectedIndex==3"/>
-        <img
-          src="../assets/images/tab-subjective-a.png"
-          alt=""
-          class="tab-item-icn-b"
-          v-show="selectedIndex!=3"
-        />
-        <div class="tab-text" :class="{ 'tab-text-ac': selectedIndex == 3 }">主观视图</div>
-      </div>
-    </div>
-  </div> -->
+  </div>  
 </template>
 
 <script>
@@ -107,7 +67,7 @@ export default {
     display: flex;
     height: 32px;
     justify-content:space-between;
-    margin: 0px 10px;
+    margin: 10px;
 }
 .tab-item{
     height: 30px;

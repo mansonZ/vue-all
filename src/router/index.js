@@ -6,7 +6,7 @@ import Day from '../views/day-view.vue'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
     path: '/',
     name: 'day-view',
@@ -14,10 +14,10 @@ Vue.use(VueRouter)
   },
   {
     path: '/week',
-    name: 'day-view',    
+    name: 'day-view',
     component: () => import(/* webpackChunkName: "about" */ '../views/week-view.vue')
   },
- 
+
 ]
 
 const router = new VueRouter({
