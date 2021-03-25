@@ -17,11 +17,7 @@ Vue.use(VueRouter)
     name: 'day-view',    
     component: () => import(/* webpackChunkName: "about" */ '../views/week-view.vue')
   },
-  {
-    path:'/month',
-    name:'month-view',
-    component:()=>import('../views/month-view.vue')
-  }
+ 
 ]
 
 const router = new VueRouter({
