@@ -4,22 +4,19 @@
     </div>
 </template>
 <script>
-import { getDay } from "../api/api.js";
 import choiceDate from "@/components/choice-date.vue";
 export default {
     name: "day-view",
     components: {
       choiceDate
     },
-    data: function () {
+    data() {
         return {
             data: "",
         };
     },
-    created: async function () {
-        let res = await getDay("2020-12-14", "18611347662");
-        this.data = res.data.data;
-        console.log(this.data);
+    created() {
+
     },
 };
 </script>

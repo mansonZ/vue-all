@@ -2,7 +2,7 @@
 <template>
     <div class="date-choice">
         <div class="month-box">
-            <div class="pre-day">
+            <div class="pre-day" @click="getPreDate">
                 <img
                     src="../assets/images/pre-week.png"
                     alt=""
@@ -20,7 +20,7 @@
                     text-align:center;
                 ">
             </el-date-picker>            
-            <div class="next-day">
+            <div class="next-day" @click="getNextDate">
                 <img
                     src="../assets/images/next-week.png"
                     alt=""
@@ -33,7 +33,8 @@
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
-import { mapGetters, mapMutations } from 'vuex';
+import { mapActions, mapGetters, mapMutations } from 'vuex';
+import {preDay,nextDay } from "../api/api.js";
 // import { getDay } from "../api/api.js";
 export default {
     //import引入的组件需要注入到对象中才能使用
@@ -48,9 +49,9 @@ export default {
     computed: {},
     //监控data中的数据变化
     watch: {
-        date:async function(val){
+        date(val){
             this.changeDate(val);
-            // let res = await getDay(val, this.$store.state.defaultPhone);            
+            this.getDayData();       
         }
     },
     //方法集合
@@ -60,7 +61,29 @@ export default {
         ]),
         ...mapGetters([
 
-        ])
+        ]),
+        ...mapActions([
+            'getDayData',
+            'getPreDay',
+            'getNextDay',
+        ]),
+        getPreDate(){
+            console.log(this.date)
+            preDay(this.date).then(res=>{
+                console.log(res)
+                this.date=res.data.data;
+                this.$store.commit('changeDate',res.data.data);
+                this.getDayData();
+            })
+        },
+        getNextDate(){
+            nextDay(this.date).then(res=>{
+                this.date=res.data.data;
+                this.$store.commit('changeDate',res.data.data);
+                this.getDayData();
+            })
+        },
+
     },
     //生命周期 - 创建完成（可以访问当前this实例）
     created() {
@@ -77,13 +100,14 @@ export default {
         var today = year + "-" + month + "-" + day;
         this.date = today;
         this.changeDate(today);
+        this.getDayData();
     },
     //生命周期 - 挂载完成（可以访问DOM元素）
     mounted() {},
     beforeCreate() {}, //生命周期 - 创建之前
     beforeMount() {}, //生命周期 - 挂载之前
     beforeUpdate() {
-        console.log(this.date)
+        console.log(this.$store.state.dayData)
     }, //生命周期 - 更新之前
     updated() {}, //生命周期 - 更新之后
     beforeDestroy() {}, //生命周期 - 销毁之前
